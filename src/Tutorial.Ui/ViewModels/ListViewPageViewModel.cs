@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Tutorial.Ui.Helpers;
+using Tutorial.Ui.Services;
 using Tutorial.Ui.Utilities;
 
 namespace Tutorial.Ui.ViewModels
@@ -10,12 +11,14 @@ namespace Tutorial.Ui.ViewModels
         private string _selected;
         private ObservableCollection<string> _dataList;
         private readonly ICommand _updateListCommand;
+        private readonly DataService _dataService;
 
         public ListViewPageViewModel()
         {
             _dataList = new ObservableCollection<string>();
             _selected = string.Empty;
 
+            _dataService = App.Current.GetService<DataService>();
             _updateListCommand = new CommandHandler((obj) => UpdateList(), (obj) => true);
         }
 
@@ -43,12 +46,11 @@ namespace Tutorial.Ui.ViewModels
 
         private void UpdateList()
         {
-            var random = new Random();
             DataList.Clear();
 
-            for (int i = 0; i < 10; i++)
+            foreach (var item in _dataService.GetRandomData(15))
             {
-                DataList.Add($"Random item {random.Next(1, 100)}");
+                DataList.Add(item);
             }
         }
     }

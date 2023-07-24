@@ -13,6 +13,8 @@ namespace Tutorial.Ui
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<IPageTypePickerService, PageTypePickerService>();
 
+            services.AddSingleton<DataService>();
+
             services.AddSingleton<IFrameContainer, FrameContainer>();
 
             services.AddTransient<MainPage>();

@@ -8,7 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ToggleSwitch Header="Toggle work" OffContent="Do work" OnContent="Working" IsOn="True" />
+            <ProgressRing IsActive="True" Width="32"/>
+        </StackPanel>
 
-    </Grid>
+        <Button Content="Standard XAML button" />
+
+        <Button Style="{StaticResource AccentButtonStyle}" Content="Accent style button" />
+    </StackPanel>
 </Page>
