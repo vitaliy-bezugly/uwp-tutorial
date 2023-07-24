@@ -7,17 +7,10 @@ namespace Tutorial.Ui.DIItems
     {
         private Frame _mainFrame = null;
 
-        public FrameContainer()
-        {
-            UniqueGuid = Guid.NewGuid();
-        }
-
         public Frame MainFrame
         {
             get => _mainFrame == null ? new Frame() : _mainFrame;
         }
-
-        public Guid UniqueGuid { get; set; }
 
         public void InstallFrame(Frame frame)
         {
