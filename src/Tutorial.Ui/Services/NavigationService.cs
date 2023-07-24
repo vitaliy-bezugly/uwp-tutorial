@@ -1,20 +1,20 @@
 ﻿using System;
-using Windows.UI.Xaml.Controls;
+using Tutorial.Ui.DIItems;
 
 namespace Tutorial.Ui.Services
 {
     public class NavigationService : INavigationService
     {
-        private readonly Frame _frame;
+        private readonly IFrameContainer _frameContainer;
 
-        public NavigationService(Frame frame)
+        public NavigationService(IFrameContainer frameContainer)
         {
-            _frame = frame;
+            _frameContainer = frameContainer;
         }
 
         public void NavigateTo(Type pageType)
         {
-            _frame.Navigate(pageType);
+            _frameContainer.MainFrame.Navigate(pageType);
         }
     }
 }

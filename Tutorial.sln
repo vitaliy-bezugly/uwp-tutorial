@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C4D172B6-DE1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial.Ui", "src\Tutorial.Ui\Tutorial.Ui.csproj", "{0A76388D-0E75-4251-9047-AAF3FBD9445F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-folder", "solution-folder", "{6DB63067-C6E3-437B-AE2C-E2E203C6F29C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM

@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using Tutorial.Ui.Services;
 using Tutorial.Ui.Utilities;
-using Windows.UI.Xaml.Controls;
 
 namespace Tutorial.Ui.ViewModels
 {
@@ -12,11 +11,12 @@ namespace Tutorial.Ui.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IPageTypePickerService _pageTypePicker;
 
-        public MainPageViewModel(Frame mainFrame)
+        public MainPageViewModel(INavigationService navigationService, IPageTypePickerService pageTypePicker)
         {
+            _navigationService = navigationService;
+            _pageTypePicker = pageTypePicker;
+
             _navigateCommand = new CommandHandler((obj) => Navigate(obj), (obj) => true);
-            _navigationService = new NavigationService(mainFrame);
-            _pageTypePicker = new PageTypePickerService();
         }
 
         public ICommand NavigateCommand => _navigateCommand;
